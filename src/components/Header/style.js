@@ -7,12 +7,14 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.div`
+  margin-left: auto;
+
   svg {
     transition: 0.2s;
   }
   svg:hover {
     cursor: pointer;
     transform: scale(1.1);
-    fill: ${props => props.theme.colors.shadow};
+    fill: ${props => props.theme.colors.text.thin};
   }
 `;

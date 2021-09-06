@@ -4,12 +4,12 @@ export default {
   colors: {
     background: '#191622',
     primary: '#25D366',
-    contrast: '#F3F3FF',
-    shadow: '#D7D6E5',
+    contrast: '#2C2440',
+    shadow: '#534773',
     border: '#EDEDFF',
 
     text: {
-      regular: '#252F24',
+      regular: '#FCFCFD',
       light: '#817F9E',
       thin: '#ABA9C7',
 
