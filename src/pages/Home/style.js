@@ -9,11 +9,12 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Form = styled.form`
+export const FormContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  transition: 0.2s;
+
   div{
     display: flex;
   }
@@ -25,9 +26,9 @@ export const Form = styled.form`
   input {
     height: 48px;
     width: 380px;
- 
     border: none;
     padding: 16px;
+    border-radius: 4px 0 0 4px;
     background: ${props => props.theme.colors.contrast};
     color: ${props => props.theme.colors.text.regular};
 
@@ -47,6 +48,7 @@ export const Form = styled.form`
 
   button {
     border: none;
+    border-radius: 0 4px 4px 0;
     height: 48px;
     padding: 16px 24px;
     background: ${props => props.theme.colors.primary};
@@ -58,4 +60,21 @@ export const Form = styled.form`
       background: ${props => shade(0.12, props.theme.colors.primary)};
     }
   }
+`;
+
+
+export const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .loading {
+    height: 0;
+  }
+`;
+
+
+export const Result = styled.div`
+  transition: 1s;
+  height: ${({isOpen}) => isOpen ? '300px' : 0};
 `;

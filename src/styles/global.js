@@ -24,4 +24,17 @@ export default createGlobalStyle`
   body, input, button {
     font-family: Intro Book;
   }
+
+  ::selection {
+    background: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.text.regular};
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.text.regular};
+    text-shadow: none;
+}
+
 `;
