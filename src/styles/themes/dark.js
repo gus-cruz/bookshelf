@@ -6,7 +6,7 @@ export default {
     primary: '#25D366',
     contrast: '#2C2440',
     shadow: '#534773',
-    border: '#EDEDFF',
+    border: '#2c2440',
 
     text: {
       regular: '#FCFCFD',

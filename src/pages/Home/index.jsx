@@ -10,7 +10,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Loading from '../../components/Loading';
 
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaCalendar, FaBookmark } from 'react-icons/fa';
 
 import {
   Container,
@@ -26,14 +26,22 @@ const Home = () => {
   const [input, setInput] = useState('');
   const [loading, setLoding] = useState(false);
   const [hasResult, setHasResult] = useState(false);
+  const [books, setBooks] = useState([]);
 
   const handleSubmit = useCallback(async () => {
     setInput('');
     setLoding(true);
+    setHasResult(false);
 
     try{
-      let data = await api.get(`/volumes?q=${input}`);
-      console.log(data);
+      let result = await api.get(`/volumes?q=${input}`);
+      if(result.data.items){
+        setBooks(result.data.items);
+      }else{
+        setBooks([]);
+      }
+
+      console.log(books);
       setLoding(false);
       setHasResult(true);
       return "success";
@@ -62,6 +70,30 @@ const Home = () => {
             { loading ? <Loading /> : null }
           </div>
         <Result isOpen={hasResult}>
+          <div className="books">
+            {books.length > 0 ?
+              books.map(book => (
+                <a className="book" target="_blank" href={book.volumeInfo.canonicalVolumeLink}>
+                <img src={book.volumeInfo.imageLinks?.thumbnail} alt={book.volumeInfo.title ? book.volumeInfo.title : "Unknown Title"}/>
+                <div className="book-info">
+                  <div className="info-header">
+                    <div>
+                      <p className="book-title">{book.volumeInfo?.title ? book.volumeInfo?.title : "Unknown Title"}</p>
+                      <p className="book-author">{book.volumeInfo?.authors[0] ? book.volumeInfo?.authors[0] : "Unknown Author"}</p>
+                    </div>
+                    <p className="book-synopsis">{book.searchInfo?.textSnippet}</p>
+                  </div>
+                  <div className="info-footer">
+                    <div className="book-publisher"><FaBookmark/><p>{book.volumeInfo.publisher ? book.volumeInfo.publisher : "Unknown"}</p></div>
+                    <div className="book-date"><FaCalendar /><p>{book.volumeInfo.publishedDate ? book.volumeInfo.publishedDate : "Unknown"}</p></div>
+                  </div>
+                </div>
+              </a>
+              ))
+            :
+              null
+            }
+          </div> 
         </Result>
        
       </Section>

@@ -15,6 +15,20 @@ export default createGlobalStyle`
     transition: 0.4s;
     background-color: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text.regular};
+
+    &::-webkit-scrollbar-track{
+      background-color: ${props => props.theme.colors.border};
+    }
+
+    &::-webkit-scrollbar{
+      width: 6px;
+      background-color: ${props => props.theme.colors.border};
+    }
+
+    &::-webkit-scrollbar-thumb{
+      background-color: ${props => props.theme.colors.primary};
+      border-radius: 20px;
+    }
   }
 
   button {
@@ -29,12 +43,11 @@ export default createGlobalStyle`
     background: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.text.regular};
     text-shadow: none;
-}
+  }
 
-::-moz-selection {
-    background: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.text.regular};
-    text-shadow: none;
-}
-
+  ::-moz-selection {
+      background: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.colors.text.regular};
+      text-shadow: none;
+  }
 `;

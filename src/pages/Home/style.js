@@ -70,11 +70,95 @@ export const Section = styled.section`
 
   .loading {
     height: 0;
+    margin-bottom: 80px;
   }
 `;
 
 
 export const Result = styled.div`
   transition: 1s;
-  height: ${({isOpen}) => isOpen ? '300px' : 0};
+  height: ${({isOpen}) => isOpen ? '100%' : 0};
+  overflow: hidden;
+  max-width: 1400px;
+  
+ 
+ 
+  .books {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 1080px) {
+      grid-template-columns: repeat(1, 1fr);
+    }  
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+
+    
+
+    .book {
+      display: flex;
+      max-width: 560px;
+      border-radius: 8px;
+
+      transition: all 0.2s, border 0.4s;
+
+      border: 2px solid ${props => props.theme.colors.background};
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(0.99);
+        border: 2px solid ${props => props.theme.colors.border};
+      }
+
+      img {
+        width: 128px;
+        height: 192px;
+        border-radius: 8px 0 0 8px;
+      }
+
+      .book-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px;
+      
+        .info-header {
+          div {
+            display: flex;
+            flex-wrap: wrap;
+          }
+          .book-title {
+            color: ${props => props.theme.colors.text.regular};
+            margin-right: 8px;
+          }
+    
+          .book-author {
+            color: ${props => props.theme.colors.text.light};
+          }
+
+          .book-synopsis {
+            color: ${props => props.theme.colors.text.regular};
+            font-size: 14px;
+            margin-top: 16px;
+          }
+        }
+
+        .info-footer {
+          display: flex;
+          color: ${props => props.theme.colors.text.light};
+
+          p {
+            margin-left: 8px;
+          }
+
+          .book-date {
+            margin-left: 32px;
+          }
+
+          div {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
 `;
