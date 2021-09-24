@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<p align="center">
+  <img alt="bookshelf" src="https://i.imgur.com/rxKK0Bg.png" width="400"><br/><br/>
+  A simple book finder
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
 
-## Available Scripts
+This project was inspired by the [APP IDEAS repository](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Book-Finder-App.md), in which one of the projects is a Book Finder. And to develop this web page I decided to use React.js and the Google Books API.
 
-In the project directory, you can run:
+### Introduction
 
-### `yarn start`
+Many people look for books to read or buy, but sometimes forget the name of the book, but remember the author or editor who published the book, thinking about it, I decided to develop Booksure, a website made in React that consumes the Google books API, making it easier for people to search for books.
+Search for books anywhere, you don't need to know the name of the book, if you know the name of the author or the publisher, just type and search
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+What you need to install to use the software locally
 
-### `yarn test`
+- NodeJs
+- Npm or Yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `yarn build`
+What you need to run the system locally you need these commands
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+$ npm install
+$ npm run start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+or if you use yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+$ yarn install
+$ yarn start
+```
 
-### `yarn eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Gus Cruz**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Usage is provided under the [MIT License](https://mit-license.org/). See LICENSE for the full details.
