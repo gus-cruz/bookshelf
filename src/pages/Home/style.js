@@ -67,6 +67,7 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 80px;
 
   .loading {
     height: 0;

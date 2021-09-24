@@ -73,15 +73,15 @@ const Home = () => {
           <div className="books">
             {books.length > 0 ?
               books.map(book => (
-                <a className="book" target="_blank" href={book.volumeInfo.canonicalVolumeLink}>
-                <img src={book.volumeInfo.imageLinks?.thumbnail} alt={book.volumeInfo.title ? book.volumeInfo.title : "Unknown Title"}/>
+                <a className="book" target="_blank" href={book.volumeInfo.canonicalVolumeLink ? book.volumeInfo.canonicalVolumeLink : ""}>
+                <img src={book.volumeInfo.imageLinks?.thumbnail ? book.volumeInfo.imageLinks?.thumbnail : ""} alt={book.volumeInfo.title ? book.volumeInfo.title : "Unknown Title"}/>
                 <div className="book-info">
                   <div className="info-header">
                     <div>
                       <p className="book-title">{book.volumeInfo?.title ? book.volumeInfo?.title : "Unknown Title"}</p>
                       <p className="book-author">{book.volumeInfo?.authors[0] ? book.volumeInfo?.authors[0] : "Unknown Author"}</p>
                     </div>
-                    <p className="book-synopsis">{book.searchInfo?.textSnippet}</p>
+                    <p className="book-synopsis">{book.searchInfo?.textSnippet ? book.searchInfo?.textSnippet : "No Synopsis Found"}</p>
                   </div>
                   <div className="info-footer">
                     <div className="book-publisher"><FaBookmark/><p>{book.volumeInfo.publisher ? book.volumeInfo.publisher : "Unknown"}</p></div>
