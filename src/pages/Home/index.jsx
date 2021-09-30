@@ -59,8 +59,10 @@ const Home = () => {
         <Form ref={formRef} onSubmit={handleSubmit}>
           <FormContent>
             <img width="308px" src={Logo} alt="bookshelf"/>
-            <p>A simple book finder</p>
-            <div>
+
+            <p><span>A simple book finder</span></p>
+
+            <div className="input">
               <input value={input} onInput={e => setInput(e.target.value)} placeholder="Type author, book name . . ." type="text" name="name"/>
               <button type="submit"><FaSearch size={20} color={theme.colors.text.button}/></button>
             </div>

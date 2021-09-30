@@ -4,6 +4,8 @@ export const Container = styled.div`
   display: flex;
   padding: 24px;
   width: 100%;
+
+  animation: delay-to-appear 3s forwards;
 `;
 
 export const Button = styled.div`

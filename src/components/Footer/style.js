@@ -6,6 +6,8 @@ export const Container = styled.div`
   align-items: center;
   padding: 24px;
 
+  animation: delay-to-appear 3s forwards;
+
   a {
     margin: 0 16px;
     color: ${props => props.theme.colors.text.light};

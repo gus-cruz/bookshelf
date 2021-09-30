@@ -14,13 +14,49 @@ export const FormContent = styled.div`
   flex-direction: column;
   align-items: center;
   transition: 0.2s;
+  animation: appear .8s forwards;
+
+  @keyframes appear {
+  0% { transform: translateY(30px) }
+  100% { transform: translateY(0) }
+  }
+
+  img {
+    animation: image-appear 1s forwards;
+
+    @keyframes image-appear {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+    }
+  }
 
   div{
     display: flex;
+
+    animation: input-appear 1.6s forwards;
+
+    @keyframes input-appear {
+      0% { opacity: 0 }
+      20% { transform: translateY(30px); opacity: 0  }
+      100% { transform: translateY(0); opacity: 1  }
+    }
   }
 
   p {
-    margin: 16px 0 40px;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    animation: text-appear 3s forwards;
+
+    @keyframes text-appear {
+      0% { width: 0; opacity: 0  }
+      20% { width: 0; opacity: 0  }
+      100% { width: 100%; opacity: 1 }
+    }
   }
 
   input {
@@ -31,6 +67,8 @@ export const FormContent = styled.div`
     border-radius: 4px 0 0 4px;
     background: ${props => props.theme.colors.contrast};
     color: ${props => props.theme.colors.text.regular};
+
+ 
 
     transition: background 0.4s;
 
