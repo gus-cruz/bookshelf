@@ -40,7 +40,7 @@ export default createGlobalStyle`
 
     animation: anti-overflow 3s forwards;
 
-    @keyframes start {
+    @keyframes anti-overflow  {
     0% { overflow: hidden }
     80% { overflow: hidden }
     100% { overflow: auto }
