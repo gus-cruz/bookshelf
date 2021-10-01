@@ -31,17 +31,17 @@ const Home = () => {
   const handleSubmit = useCallback(async () => {
     setInput('');
     setLoding(true);
-    setHasResult(false);
+
 
     try{
       let result = await api.get(`/volumes?q=${input}`);
       if(result.data.items){
         setBooks(result.data.items);
+        setHasResult(false);
       }else{
         setBooks([]);
       }
 
-      console.log(books);
       setLoding(false);
       setHasResult(true);
       return "success";
@@ -55,15 +55,15 @@ const Home = () => {
   return (
     <Container>
       <Header />
-      <Section>
-        <Form ref={formRef} onSubmit={handleSubmit}>
+      <Section className={hasResult ? 'search-animation' : ""}>
+        <Form ref={formRef} onSubmit={handleSubmit} className="form" autoComplete="new-password">
           <FormContent>
             <img width="308px" src={Logo} alt="bookshelf"/>
 
             <p><span>A simple book finder</span></p>
 
             <div className="input">
-              <input value={input} onInput={e => setInput(e.target.value)} placeholder="Type author, book name . . ." type="text" name="name"/>
+              <input value={input} onInput={e => setInput(e.target.value)} placeholder="Type author, book name . . ." type="text" name="search" autoComplete="none" />
               <button type="submit"><FaSearch size={20} color={theme.colors.text.button}/></button>
             </div>
           </FormContent>
@@ -72,8 +72,8 @@ const Home = () => {
             { loading ? <Loading /> : null }
           </div>
         <Result isOpen={hasResult}>
-          <div className="books">
-            {books.length > 0 ?
+          <div className={`books ${hasResult ? 'books-animation' : ""}` }>
+            {books?.length > 0 ?
               books.map(book => (
                 <a className="book" target="_blank" href={book.volumeInfo.canonicalVolumeLink ? book.volumeInfo.canonicalVolumeLink : ""}>
                 <img src={book.volumeInfo.imageLinks?.thumbnail ? book.volumeInfo.imageLinks?.thumbnail : ""} alt={book.volumeInfo.title ? book.volumeInfo.title : "Unknown Title"}/>
@@ -81,7 +81,7 @@ const Home = () => {
                   <div className="info-header">
                     <div>
                       <p className="book-title">{book.volumeInfo?.title ? book.volumeInfo?.title : "Unknown Title"}</p>
-                      <p className="book-author">{book.volumeInfo?.authors[0] ? book.volumeInfo?.authors[0] : "Unknown Author"}</p>
+                      <p className="book-author">{book.volumeInfo?.authors?.length > 0 ? book.volumeInfo?.authors[0] : "Unknown Author"}</p>
                     </div>
                     <p className="book-synopsis">{book.searchInfo?.textSnippet ? book.searchInfo?.textSnippet : "No Synopsis Found"}</p>
                   </div>

@@ -14,7 +14,7 @@ import Routes from './routes';
 export const ToggleThemeContext = React.createContext({});
 
 function App() {
-  const [theme, setTheme] = usePersistedState('theme', light);
+  const [theme, setTheme] = usePersistedState('bookshelf@theme', light);
   
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
