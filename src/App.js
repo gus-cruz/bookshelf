@@ -24,7 +24,7 @@ function App() {
     <>
     <ToggleThemeContext.Provider value={toggleTheme}>
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes />
         </BrowserRouter>
         <GlobalStyle />
