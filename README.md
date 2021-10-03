@@ -5,7 +5,7 @@
 
 ## Getting started
 
-This project was inspired by the <a href="https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Book-Finder-App.md" target="_blank">APP IDEAS repository</a>, in which one of the projects is a Book Finder. And to develop this web page I decided to use React.js and the <a href="https://developers.google.com/books" target="_blank">Google Books API</a>. You can accsess the online site <a href="https://gus-cruz.github.io/bookshelf/" target="_blank">here</a> or run it by yourself.
+This project was inspired by the <a href="https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Book-Finder-App.md" target="_blank">APP IDEAS repository</a>, in which one of the projects is a Book Finder. And to develop this web page I decided to use React.js and the <a href="https://developers.google.com/books" target="_blank">Google Books API</a>. You can access the online site <a href="https://gus-cruz.github.io/bookshelf/" target="_blank">here</a> or run it by yourself.
 
 ### Introduction
 
